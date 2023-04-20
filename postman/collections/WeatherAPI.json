@@ -1,0 +1,212 @@
+{
+	"info": {
+		"_postman_id": "a7277b43-dc9d-4e83-855a-3978acb8628c",
+		"name": "WeatherAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "25605799-a7277b43-dc9d-4e83-855a-3978acb8628c"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Register user",
+					"id": "0d0af3f9-16e7-42fd-ad3d-3d97527b2340",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\" : \"Joe\",\r\n    \"lastName\" : \"Mama\",\r\n    \"email\" : \"jmama@mail.com\",\r\n    \"password\" : \"asdf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/login/register",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"login",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login user",
+					"id": "03d9155d-bcdb-4845-8bfb-451bf74cf379",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"jmama@mail.com\",\r\n    \"password\" : \"asdf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/login/login",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"login",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Protected endpoint",
+					"id": "791565f6-79a0-40ee-a30a-7b704b294ac1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/login/sample",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"login",
+								"sample"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"id": "68ffc80a-7d9e-4de9-9fdf-51513baee4e2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/login/logout",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"login",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "f52fb156-377b-4246-ae1e-5fdeefceb0d0"
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Update user info",
+					"id": "058e4129-8b07-4903-a775-329663b11d34",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\" : \"Bob\",\r\n    \"lastName\" : \"Sample\",\r\n    \"email\" : \"bsample@gmail.com\",\r\n    \"password\" : \"dsf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/user",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"id": "e3323c0a-19c3-40f2-919f-be37390d7045",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/user",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "a507dcb5-c309-4581-b85f-d2a58673c0f4"
+		}
+	]
+}
