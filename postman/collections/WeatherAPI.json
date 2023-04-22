@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "a7277b43-dc9d-4e83-855a-3978acb8628c",
+		"_postman_id": "6f39012b-095e-4792-94ce-97836b6cb2c7",
 		"name": "WeatherAPI",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "25605799-a7277b43-dc9d-4e83-855a-3978acb8628c"
+		"_uid": "25605799-6f39012b-095e-4792-94ce-97836b6cb2c7"
 	},
 	"item": [
 		{
@@ -11,7 +11,7 @@
 			"item": [
 				{
 					"name": "Register user",
-					"id": "0d0af3f9-16e7-42fd-ad3d-3d97527b2340",
+					"id": "2b287b14-0bc5-4d96-b01b-8e2d1d31cfd9",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -43,7 +43,7 @@
 				},
 				{
 					"name": "Login user",
-					"id": "03d9155d-bcdb-4845-8bfb-451bf74cf379",
+					"id": "44d79db1-d1e1-44c4-adad-bab8d884f117",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -75,7 +75,7 @@
 				},
 				{
 					"name": "Protected endpoint",
-					"id": "791565f6-79a0-40ee-a30a-7b704b294ac1",
+					"id": "dfb16e64-67fa-431d-8970-ca1663df1327",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -107,7 +107,7 @@
 				},
 				{
 					"name": "Logout",
-					"id": "68ffc80a-7d9e-4de9-9fdf-51513baee4e2",
+					"id": "a16682a4-1fd7-4015-b978-dbb6d107d283",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -138,14 +138,115 @@
 					"response": []
 				}
 			],
-			"id": "f52fb156-377b-4246-ae1e-5fdeefceb0d0"
+			"id": "f7c3a8de-c20b-4d22-a4c3-31d333a7ee7c"
 		},
 		{
 			"name": "User",
 			"item": [
 				{
+					"name": "Locations",
+					"item": [
+						{
+							"name": "Add location to user",
+							"id": "996ab442-c204-48b6-b9e1-8a584be7183e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"locationKey\" : \"328169\",\r\n    \"city\": \"Orlando\",\r\n    \"state\": \"Florida\",\r\n    \"country\": \"United States\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/user/location",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"user",
+										"location"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete location from user",
+							"id": "2dd22ff0-40e2-4e77-ae1e-39e411b1e844",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"locationKey\" : \"328169\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/user/location",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"user",
+										"location"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "e3a38c22-7afd-4d14-8e3e-644ae26feade"
+				},
+				{
+					"name": "Get user info",
+					"id": "db574ecb-f2cb-424b-acde-1781a1a187f4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/user",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Update user info",
-					"id": "058e4129-8b07-4903-a775-329663b11d34",
+					"id": "7f6cf7dc-b368-4640-ab81-c0a9b84cdd09",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -154,7 +255,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"firstName\" : \"Bob\",\r\n    \"lastName\" : \"Sample\",\r\n    \"email\" : \"bsample@gmail.com\",\r\n    \"password\" : \"dsf\"\r\n}",
+							"raw": "{\r\n    \"firstName\" : \"Bob\",\r\n    \"lastName\" : \"Sample\",\r\n    \"email\" : \"bsample@mail.com\",\r\n    \"password\" : \"dsf\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -176,7 +277,7 @@
 				},
 				{
 					"name": "Delete user",
-					"id": "e3323c0a-19c3-40f2-919f-be37390d7045",
+					"id": "02be80ed-5828-49a7-aef7-b0b4da766b29",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -206,7 +307,7 @@
 					"response": []
 				}
 			],
-			"id": "a507dcb5-c309-4581-b85f-d2a58673c0f4"
+			"id": "b7be9518-b714-4203-9aba-8db87e892577"
 		}
 	]
 }
