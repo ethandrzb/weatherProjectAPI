@@ -9,7 +9,7 @@ id = b0c52923-7f8c-4b0c-8587-0c2e8f60e4a3
 
 [config.relations.collections]
 rootDirectory = postman/collections
-files[] = {"id":"25605799-6f39012b-095e-4792-94ce-97836b6cb2c7","path":"WeatherAPI.json","metaData":{}}
+files[] = {"id":"25605799-463dbd24-b7ab-4eaf-b25e-5471ad1ae03d","path":"WeatherAPI.json","metaData":{}}
 
 [config.relations.collections.metaData]
 

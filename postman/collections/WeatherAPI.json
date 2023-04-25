@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "6f39012b-095e-4792-94ce-97836b6cb2c7",
+		"_postman_id": "463dbd24-b7ab-4eaf-b25e-5471ad1ae03d",
 		"name": "WeatherAPI",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "25605799-6f39012b-095e-4792-94ce-97836b6cb2c7"
+		"_uid": "25605799-463dbd24-b7ab-4eaf-b25e-5471ad1ae03d"
 	},
 	"item": [
 		{
@@ -11,7 +11,7 @@
 			"item": [
 				{
 					"name": "Register user",
-					"id": "2b287b14-0bc5-4d96-b01b-8e2d1d31cfd9",
+					"id": "a4b3c316-a25d-48a0-8e1f-2a2561e746f6",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -39,11 +39,119 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"id": "090bbba8-05ce-43d8-9143-ac42a6f3ec92",
+							"name": "Register user",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\" : \"Joe\",\r\n    \"lastName\" : \"Mama\",\r\n    \"email\" : \"jmama@mail.com\",\r\n    \"password\" : \"asdf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/login/register",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"login",
+										"register"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
+							"id": "f5ad098c-643e-43d2-85a7-9a800196df08",
+							"name": "Register user (account already exists))",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\" : \"Joe\",\r\n    \"lastName\" : \"Mama\",\r\n    \"email\" : \"jmama@mail.com\",\r\n    \"password\" : \"asdf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/login/register",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"login",
+										"register"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PATCH, DELETE, OPTIONS"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "59"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3b-ROANnf8ssH+7PEKiIM0Zdx6AbtQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 23 Apr 2023 20:16:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"Account with email jmama@mail.com already exists.\"\n}"
+						}
+					]
 				},
 				{
 					"name": "Login user",
-					"id": "44d79db1-d1e1-44c4-adad-bab8d884f117",
+					"id": "d9cd4640-8432-4106-9f28-368914273013",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -71,11 +179,166 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"id": "1b802e9f-f406-46d7-b188-651cdf62faee",
+							"name": "Login user (success)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\" : \"jmama@mail.com\",\r\n    \"password\" : \"asdf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/login/login",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"login",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PATCH, DELETE, OPTIONS"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDQ0NTEwYWNjNTI0Mzg2NGY4OTNmMzUiLCJpYXQiOjE2ODIyODEwNDJ9.KU89ROCK0F310Ir_QkqQmGsJ1NQs_FQsiH-5qgjIUXA; Path=/"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "32"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"20-wKqhEEhmxJyo+suZoUrCciMnjFE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 23 Apr 2023 20:17:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"Logged in successfully\"\n}"
+						},
+						{
+							"id": "c80cca21-b741-4275-a526-72b2cb5c7d84",
+							"name": "Login user (failure)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\" : \"jmama@mail.com\",\r\n    \"password\" : \"asd\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/login/login",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"login",
+										"login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PATCH, DELETE, OPTIONS"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "38"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"26-6fBeHvHa0EobeJEi7uzrM/GJksw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 23 Apr 2023 20:24:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"Invalid username or password\"\n}"
+						}
+					]
 				},
 				{
 					"name": "Protected endpoint",
-					"id": "dfb16e64-67fa-431d-8970-ca1663df1327",
+					"id": "6689b0b7-fbef-42f8-8add-05a78311cfdb",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -101,13 +364,14 @@
 								"login",
 								"sample"
 							]
-						}
+						},
+						"description": "Sample endpoint requiring authentication. Has no practical functionality."
 					},
 					"response": []
 				},
 				{
 					"name": "Logout",
-					"id": "a16682a4-1fd7-4015-b978-dbb6d107d283",
+					"id": "c7df0ebc-2079-45c0-acbc-4c6718ad7042",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -133,22 +397,103 @@
 								"login",
 								"logout"
 							]
-						}
+						},
+						"description": "Deletes the authentication cookie (if it exists).\n\nAlways returns 200 OK regardless of whether a user was logged in or not."
 					},
-					"response": []
+					"response": [
+						{
+							"id": "ee21f9eb-6032-4e2d-960e-315c3d5332ec",
+							"name": "Logout",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/login/logout",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"login",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PATCH, DELETE, OPTIONS"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "jwt=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"21-zl8RjBTrA9kG63vasXg0JIV6nGY\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 23 Apr 2023 20:25:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"Logged out successfully\"\n}"
+						}
+					]
 				}
 			],
-			"id": "f7c3a8de-c20b-4d22-a4c3-31d333a7ee7c"
+			"id": "16bf5382-25e7-41de-a9a8-a98eb4b10e5d"
 		},
 		{
-			"name": "User",
+			"name": "User (requires authentication)",
 			"item": [
 				{
 					"name": "Locations",
 					"item": [
 						{
 							"name": "Add location to user",
-							"id": "996ab442-c204-48b6-b9e1-8a584be7183e",
+							"id": "0be4c928-95cd-4ff0-92d9-f5376ee33049",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -176,11 +521,87 @@
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"id": "25fb95d7-b8e6-437c-9a03-2f47d1913c0b",
+									"name": "Add location to user",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"locationKey\": \"2623321\",\r\n    \"city\": \"Queens\",\r\n    \"state\": \"New York\",\r\n    \"country\": \"United States\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:5000/user/location",
+											"host": [
+												"localhost"
+											],
+											"port": "5000",
+											"path": [
+												"user",
+												"location"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, PATCH, DELETE, OPTIONS"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "49"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"31-1DqVjcOqNTJUCP4d4AtCtfHE+jI\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 23 Apr 2023 22:01:32 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"msg\": \"Successfully added Orlando to locations\"\n}"
+								}
+							]
 						},
 						{
 							"name": "Delete location from user",
-							"id": "2dd22ff0-40e2-4e77-ae1e-39e411b1e844",
+							"id": "c336811a-cbbf-4d98-931b-e1361e9d8eaf",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -208,14 +629,91 @@
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"id": "21257469-aa28-4f47-ac0a-8f6a01ad1080",
+									"name": "Delete location from user",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"locationKey\" : \"328169\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "localhost:5000/user/location",
+											"host": [
+												"localhost"
+											],
+											"port": "5000",
+											"path": [
+												"user",
+												"location"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Access-Control-Allow-Headers",
+											"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+										},
+										{
+											"key": "Access-Control-Allow-Methods",
+											"value": "GET, POST, PATCH, DELETE, OPTIONS"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "61"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"3d-pWkkfuLzlVWL4Wqlg+qGwakA2QM\""
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 23 Apr 2023 22:02:07 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"msg\": \"Successfully deleted location 328169 from locations\"\n}"
+								}
+							]
 						}
 					],
-					"id": "e3a38c22-7afd-4d14-8e3e-644ae26feade"
+					"id": "f6f541f3-99fc-4e74-a951-f68b4e02c0d3",
+					"description": "Access `locations` array of logged in user.\n\nNote: Use \"get user info\" to read `locations` array."
 				},
 				{
 					"name": "Get user info",
-					"id": "db574ecb-f2cb-424b-acde-1781a1a187f4",
+					"id": "aa8017b3-f426-4428-9a8c-223d0b83378d",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -242,11 +740,86 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"id": "9178195a-98fb-4ed9-8c73-5ac2a3c3ce54",
+							"name": "Get user info",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/user",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PATCH, DELETE, OPTIONS"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "376"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"178-wWr8n1zgWpG4ibX/VnRHgkWtx/U\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 23 Apr 2023 22:04:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"6445a01fb501df982c317d95\",\n    \"firstName\": \"Joe\",\n    \"lastName\": \"Mama\",\n    \"email\": \"jmama@mail.com\",\n    \"password\": \"HIDDEN\",\n    \"locations\": [\n        {\n            \"locationKey\": \"328169\",\n            \"city\": \"Orlando\",\n            \"state\": \"Florida\",\n            \"country\": \"United States\",\n            \"_id\": \"6445ab1c47b2a9b3065c023f\"\n        },\n        {\n            \"locationKey\": \"2623321\",\n            \"city\": \"Queens\",\n            \"state\": \"New York\",\n            \"country\": \"United States\",\n            \"_id\": \"6445ab7647b2a9b3065c0243\"\n        }\n    ],\n    \"__v\": 6\n}"
+						}
+					]
 				},
 				{
 					"name": "Update user info",
-					"id": "7f6cf7dc-b368-4640-ab81-c0a9b84cdd09",
+					"id": "faf2fd50-1ac0-4e72-8d86-af638591dc19",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -273,11 +846,86 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"id": "fcaf070f-82c0-488c-bbe6-935f6c4491f2",
+							"name": "Update user info",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\" : \"Bob\",\r\n    \"lastName\" : \"Sample\",\r\n    \"email\" : \"bsample@mail.com\",\r\n    \"password\" : \"dsf\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/user",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PATCH, DELETE, OPTIONS"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "55"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"37-Rf4MiZxkbHTji2QCaOqGw4CR1MU\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 23 Apr 2023 22:05:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"Successfully updated user info for Bob Sample\"\n}"
+						}
+					]
 				},
 				{
 					"name": "Delete user",
-					"id": "02be80ed-5828-49a7-aef7-b0b4da766b29",
+					"id": "05f895b4-c32d-4afb-a8e4-fd0ff52b6147",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -302,12 +950,344 @@
 							"path": [
 								"user"
 							]
-						}
+						},
+						"description": "**INTERNAL TESTING ONLY**\n\nDeletes the account of the currently logged in user and logs them out."
 					},
 					"response": []
 				}
 			],
-			"id": "b7be9518-b714-4203-9aba-8db87e892577"
+			"id": "04190285-1793-44b6-9252-ed57111ac678"
+		},
+		{
+			"name": "Weather",
+			"item": [
+				{
+					"name": "City Search",
+					"id": "529e0f2e-b6b6-45f5-b3e2-dd035056cef3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"city\": \"Madrid\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/weather/citySearch",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"weather",
+								"citySearch"
+							]
+						},
+						"description": "**Note:** Search only returns **exact matches** to the query."
+					},
+					"response": [
+						{
+							"id": "95d5ba87-18a2-443a-827c-9f5394c80ac0",
+							"name": "City Search",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"city\": \"Queens\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/weather/citySearch",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"weather",
+										"citySearch"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PATCH, DELETE, OPTIONS"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "394"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"18a-VDu6YIVmD1DrFCH56J0ttnMx4nQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 23 Apr 2023 22:05:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"Key\": \"2623321\",\n        \"City\": \"Queens\",\n        \"State\": \"New York\",\n        \"Country\": \"United States\"\n    },\n    {\n        \"Key\": \"3390110\",\n        \"City\": \"Queens\",\n        \"State\": \"British Columbia\",\n        \"Country\": \"Canada\"\n    },\n    {\n        \"Key\": \"3555881\",\n        \"City\": \"Queens\",\n        \"State\": \"Ontario\",\n        \"Country\": \"Canada\"\n    },\n    {\n        \"Key\": \"2193948\",\n        \"City\": \"Queens\",\n        \"State\": \"Kentucky\",\n        \"Country\": \"United States\"\n    },\n    {\n        \"Key\": \"2151968\",\n        \"City\": \"Queens\",\n        \"State\": \"West Virginia\",\n        \"Country\": \"United States\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "12 Hour Forecast",
+					"id": "fa476c02-cbd3-48c5-821a-761a5c2aef8d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Key\": \"3555881\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/weather/12hrForecast",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"weather",
+								"12hrForecast"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "c6d2ebda-75d4-4c6e-9b94-fd89c7d75f0d",
+							"name": "12 Hour Forecast",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Key\": \"3555881\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/weather/12hrForecast",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"weather",
+										"12hrForecast"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PATCH, DELETE, OPTIONS"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1435"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"59b-zgqGNgZySw2TA5c4omqFSaNGgzY\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 23 Apr 2023 22:05:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"DateTime\": \"2023-04-23T19:00:00-04:00\",\n        \"Temperature\": 49,\n        \"Unit\": \"F\",\n        \"Conditions\": \"Intermittent clouds\",\n        \"Precipitation\": false\n    },\n    {\n        \"DateTime\": \"2023-04-23T20:00:00-04:00\",\n        \"Temperature\": 47,\n        \"Unit\": \"F\",\n        \"Conditions\": \"Cloudy\",\n        \"Precipitation\": false\n    },\n    {\n        \"DateTime\": \"2023-04-23T21:00:00-04:00\",\n        \"Temperature\": 45,\n        \"Unit\": \"F\",\n        \"Conditions\": \"Cloudy\",\n        \"Precipitation\": false\n    },\n    {\n        \"DateTime\": \"2023-04-23T22:00:00-04:00\",\n        \"Temperature\": 45,\n        \"Unit\": \"F\",\n        \"Conditions\": \"Cloudy\",\n        \"Precipitation\": false\n    },\n    {\n        \"DateTime\": \"2023-04-23T23:00:00-04:00\",\n        \"Temperature\": 45,\n        \"Unit\": \"F\",\n        \"Conditions\": \"Cloudy\",\n        \"Precipitation\": false\n    },\n    {\n        \"DateTime\": \"2023-04-24T00:00:00-04:00\",\n        \"Temperature\": 45,\n        \"Unit\": \"F\",\n        \"Conditions\": \"Cloudy\",\n        \"Precipitation\": false\n    },\n    {\n        \"DateTime\": \"2023-04-24T01:00:00-04:00\",\n        \"Temperature\": 44,\n        \"Unit\": \"F\",\n        \"Conditions\": \"Cloudy\",\n        \"Precipitation\": false\n    },\n    {\n        \"DateTime\": \"2023-04-24T02:00:00-04:00\",\n        \"Temperature\": 45,\n        \"Unit\": \"F\",\n        \"Conditions\": \"Intermittent clouds\",\n        \"Precipitation\": false\n    },\n    {\n        \"DateTime\": \"2023-04-24T03:00:00-04:00\",\n        \"Temperature\": 44,\n        \"Unit\": \"F\",\n        \"Conditions\": \"Intermittent clouds\",\n        \"Precipitation\": false\n    },\n    {\n        \"DateTime\": \"2023-04-24T04:00:00-04:00\",\n        \"Temperature\": 42,\n        \"Unit\": \"F\",\n        \"Conditions\": \"Intermittent clouds\",\n        \"Precipitation\": false\n    },\n    {\n        \"DateTime\": \"2023-04-24T05:00:00-04:00\",\n        \"Temperature\": 41,\n        \"Unit\": \"F\",\n        \"Conditions\": \"Intermittent clouds\",\n        \"Precipitation\": false\n    },\n    {\n        \"DateTime\": \"2023-04-24T06:00:00-04:00\",\n        \"Temperature\": 40,\n        \"Unit\": \"F\",\n        \"Conditions\": \"Intermittent clouds\",\n        \"Precipitation\": false\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Daily Forecast",
+					"id": "9d98423b-ca91-462c-99ff-df464c18d191",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Key\": \"3555881\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/weather/DailyForecast",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"weather",
+								"DailyForecast"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "782e1e88-e9b2-441f-86eb-3f9803bf6bf7",
+							"name": "Daily Forecast",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Key\": \"3555881\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:5000/weather/DailyForecast",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"weather",
+										"DailyForecast"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET, POST, PATCH, DELETE, OPTIONS"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1075"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"433-3mgCi9fxzyM37HMqOqg+yxaU4mo\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 23 Apr 2023 22:05:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"Headline\": {\n        \"EffectiveDate\": \"2023-04-23T08:00:00-04:00\",\n        \"EffectiveEpochDate\": 1682251200,\n        \"Severity\": 4,\n        \"Text\": \"Noticeably cooler weather on the way today\",\n        \"Category\": \"cooler\",\n        \"EndDate\": \"2023-04-23T20:00:00-04:00\",\n        \"EndEpochDate\": 1682294400,\n        \"MobileLink\": \"http://www.accuweather.com/en/ca/queens/k7l/daily-weather-forecast/3555881?lang=en-us\",\n        \"Link\": \"http://www.accuweather.com/en/ca/queens/k7l/daily-weather-forecast/3555881?lang=en-us\"\n    },\n    \"DailyForecasts\": [\n        {\n            \"Date\": \"2023-04-23T07:00:00-04:00\",\n            \"EpochDate\": 1682247600,\n            \"Temperature\": {\n                \"Minimum\": {\n                    \"Value\": 40,\n                    \"Unit\": \"F\",\n                    \"UnitType\": 18\n                },\n                \"Maximum\": {\n                    \"Value\": 52,\n                    \"Unit\": \"F\",\n                    \"UnitType\": 18\n                }\n            },\n            \"Day\": {\n                \"Icon\": 14,\n                \"IconPhrase\": \"Partly sunny w/ showers\",\n                \"HasPrecipitation\": true,\n                \"PrecipitationType\": \"Rain\",\n                \"PrecipitationIntensity\": \"Light\"\n            },\n            \"Night\": {\n                \"Icon\": 38,\n                \"IconPhrase\": \"Mostly cloudy\",\n                \"HasPrecipitation\": false\n            },\n            \"Sources\": [\n                \"AccuWeather\"\n            ],\n            \"MobileLink\": \"http://www.accuweather.com/en/ca/queens/k7l/daily-weather-forecast/3555881?day=1&lang=en-us\",\n            \"Link\": \"http://www.accuweather.com/en/ca/queens/k7l/daily-weather-forecast/3555881?day=1&lang=en-us\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			],
+			"id": "57408ac7-a2bf-4561-8464-ab5e4aef93f2"
 		}
 	]
 }
